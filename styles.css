@@ -1,6 +1,4 @@
-/* =========================
-   RESET & BASE
-========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,18 +12,13 @@ body {
     line-height: 1.5;
 }
 
-/* =========================
-   LAYOUT
-========================= */
+
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 0 20px;
 }
-
-/* =========================
-   HEADER
-========================= */
+  
 .header {
     background: black;
     padding: 20px 40px;
@@ -72,9 +65,6 @@ body {
     color: white;
 }
 
-/* =========================
-   HERO
-========================= */
 .hero {
     height: 80vh;
     background: url("assets/img/img-5.jpg") center/cover no-repeat;
@@ -113,9 +103,7 @@ body {
     background: darkred;
 }
 
-/* =========================
-   EVENTS
-========================= */
+
 .events {
     padding: 40px 0;
 }
@@ -145,9 +133,7 @@ body {
     cursor: pointer;
 }
 
-/* =========================
-   ABOUT
-========================= */
+
 .about {
     padding: 40px 0;
 }
@@ -168,9 +154,7 @@ body {
     margin-top: 10px;
 }
 
-/* =========================
-   MEDIA / CAROUSEL
-========================= */
+
 .media {
     padding: 40px 0;
 }
@@ -194,9 +178,6 @@ body {
     transform: scale(1.05);
 }
 
-/* =========================
-   FOOTER
-========================= */
 .footer {
     padding: 20px;
     text-align: center;
@@ -223,9 +204,7 @@ body {
     color: red;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 @media (max-width: 768px) {
 
     .nav {
