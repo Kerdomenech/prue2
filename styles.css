@@ -1,3 +1,6 @@
+/* =========================
+   RESET & BASE
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -11,25 +14,38 @@ body {
     line-height: 1.5;
 }
 
-/* HEADER */
+/* =========================
+   LAYOUT
+========================= */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
 .header {
     background: black;
     padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top:0;
-    z-index: 100;
-    margin-top: 4px;
 }
-
 
 .logo {
     font-weight: bold;
     color: red;
 }
 
+/* NAV */
 .nav {
     display: flex;
     gap: 20px;
@@ -38,117 +54,189 @@ body {
 .nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
     font-size: 1rem;
+    transition: 0.3s;
 }
 
+.nav a:hover {
+    color: red;
+}
+
+/* MENU TOGGLE */
 .menu-toggle {
     display: none;
     font-size: 24px;
     cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
     height: 80vh;
-    background: url(assets/img/img-5.jpg) center/cover;
-    backdrop-filter: blur(15px);
+    background: url("assets/img/img-5.jpg") center/cover no-repeat;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
-.hero h1 {
+.hero__overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hero h2 {
     font-size: 3rem;
-    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
     margin-bottom: 20px;
 }
 
-.hero button {
-    margin-top: 15px;
-    padding: 15px 30px;
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
     background: red;
-    border: none;
     color: white;
-    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-/* EVENTS */
+.btn:hover {
+    background: darkred;
+}
+
+/* =========================
+   EVENTS
+========================= */
 .events {
-    padding: 40px;
+    padding: 40px 0;
 }
 
-table {
+.events__table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-th, td {
+.events__table th,
+.events__table td {
     border: 1px solid #444;
     padding: 10px;
     text-align: center;
 }
 
-th {
+.events__table th {
     background: red;
 }
 
-td button {
+.events__table button {
     background: red;
     border: none;
     color: white;
-    padding: 5px 10px;
+    padding: 6px 12px;
+    cursor: pointer;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 .about {
-    padding: 40px;
+    padding: 40px 0;
+}
+
+.about__content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about img {
+    width: 300px;
+    border-radius: 10px;
 }
 
 .about ul {
     margin-top: 10px;
 }
 
-/* MULTIMEDIA */
-.multimedia {
-    padding: 40px;
+/* =========================
+   MEDIA / CAROUSEL
+========================= */
+.media {
+    padding: 40px 0;
 }
 
-.media_container {
+.carousel {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
-.media__grid{
+.carousel img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     border: 2px solid blanchedalmond;
+    transition: 0.3s;
 }
 
-/* FOOTER */
+.carousel img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
 .footer {
     padding: 20px;
     text-align: center;
     background: black;
 }
 
-/* RESPONSIVE */
+.social {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.social li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    color: red;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
+
     .nav {
         display: none;
         flex-direction: column;
         background: black;
         position: absolute;
-        top: 60px;
+        top: 70px;
         right: 0;
         width: 200px;
+        padding: 20px;
     }
 
     .nav.active {
@@ -159,9 +247,8 @@ td button {
         display: block;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
+    .about__content {
+        flex-direction: column;
+        text-align: center;
     }
 }
-
-
